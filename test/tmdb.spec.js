@@ -114,6 +114,38 @@ describe('tmdb API wrapper test', function() {
       expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/similar?api_key='+API_KEY);
     });
 
+    it('getMovieCredits', function() {
+      tmdb.getMovieCredits(51234);
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/credits?api_key='+API_KEY);
+    });
+
+    it('getMovieImages', function() {
+      tmdb.getMovieImages(51234);
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/images?api_key='+API_KEY);
+    });
+
+    it('getMovieKeywords', function() {
+      tmdb.getMovieKeywords(51234);
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/keywords?api_key='+API_KEY);
+    });
+
+    it('getMovieVideos', function() {
+      tmdb.getMovieVideos(51234);
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/videos?api_key='+API_KEY);
+    });
+
     it('getMovieReviews', function() {
       tmdb.getMovieReviews(51234);
       request = jasmine.Ajax.requests.mostRecent();

@@ -1,5 +1,7 @@
 # tmdbjs
 [![Build Status](https://travis-ci.org/gabrielperales/tmdbjs.svg?branch=master)](https://travis-ci.org/gabrielperales/tmdbjs)
+[![Dependencies Status](https://david-dm.org/gabrielperales/tmdbjs.svg?theme=shields.io)](https://david-dm.org/gabrielperales/tmdbjs)
+[![DevDependencies Status](https://david-dm.org/gabrielperales/tmdbjs/dev-status.svg?theme=shields.io)](https://david-dm.org/gabrielperales/tmdbjs#info=devDependencies)
 
 The movie database API wrapper for JavaScript.
 
@@ -70,6 +72,30 @@ tmdb.getMovie(movieid, error, success);
 tmdb.getMoviesSimilarTo(movieid, error, success);
 ```
 
+## getMovieCredits
+
+```Javascript
+tmdb.getMovieCredits(movieid, error, success);
+```
+
+## getMovieImages
+
+```Javascript
+tmdb.getMovieImages(movieid, error, success);
+```
+
+## getMovieKeywords
+
+```Javascript
+tmdb.getMovieKeywords(movieid, error, success);
+```
+
+## getMovieVideos
+
+```Javascript
+tmdb.getMovieVideos(movieid, error, success);
+```
+
 ## getMovieReviews
 
 ```Javascript
@@ -82,4 +108,6 @@ tmdb.getMovieReviews(movieid, error, success);
 tmdb.getMovieReviews(movieid, error, success);
 ```
 
+==========================
 ## More methods are coming!
+==========================
