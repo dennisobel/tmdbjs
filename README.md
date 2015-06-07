@@ -1,8 +1,11 @@
 # tmdbjs
+[![Build Status](https://travis-ci.org/gabrielperales/tmdbjs.svg?branch=master)](https://travis-ci.org/gabrielperales/tmdbjs)
+
 The movie database API wrapper for JavaScript.
 
 You can check the original documentation about The movie database API
 [here](http://docs.themoviedb.apiary.io/).
+
 
 # Initialize
 
