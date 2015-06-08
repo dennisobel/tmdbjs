@@ -20,92 +20,120 @@ var tmdb = tmdb.init({ apikey: YOUR_API_KEY });
 
 # Implemented Methods:
 
-## getConfiguration
-You can get the tmdb configuration using this function. If the request
-fails, you can check the error information using the error callback,
-otherwise, you can check the configuration data using the success
-callback.
+Callbacks follows the NodeJS convention. You should check the first
+parameter of the callback to know if an error has ocurred. Otherwise,
+you will get the requested data in the second parameter of the callback.
+
+Error hangling usually follows the format of the snippet behind this lines:
 
 ```Javascript
-tmdb.getConfiguration(error, success);
+tmdb.getConfiguration(function(error, data){
+  if (error) {
+    throw (error);
+  }
+
+  doSomething(data);
+});
+```
+
+## getConfiguration
+Get configuration of the TMDB service. [Check the response](http://docs.themoviedb.apiary.io/#reference/configuration/get)
+
+```Javascript
+tmdb.getConfiguration(callback);
 ```
 
 ## getMoviesUpcoming
+Get the movies that are upcoming to cinemas or theaters. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/upcoming/get)
 
 ```Javascript
-tmdb.getMoviesUpcoming(error, success);
+tmdb.getMoviesUpcoming(callback);
 ```
 
 ## getMoviesNowPlaying
+Get the list of movies that are playing in cinemas o theaters. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movienowplaying/get)
 
 ```Javascript
-tmdb.getMoviesNowPlaying(error, success);
+tmdb.getMoviesNowPlaying(callback);
 ```
 
 ## getMovieLatest
+Get the last movie id of TMDB service. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movielatest/get)
 
 ```Javascript
-tmdb.getMovieLatest(error, success);
+tmdb.getMovieLatest(callback);
 ```
 
 ## getMoviesTopRated
+Get most rated movies of TMDB. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+
 
 ```Javascript
-tmdb.getMoviesTopRated(error, success);
+tmdb.getMoviesTopRated(callback);
 ```
 
 ## getMoviesPopular
+Get most popular movies of TMDB. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+
 
 ```Javascript
-tmdb.getMoviesPopular(error, success);
+tmdb.getMoviesPopular(callback);
 ```
 
 ## getMovie
+Get a movie given an TMDB id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieid/get)
 
 ```Javascript
-tmdb.getMovie(movieid, error, success);
+tmdb.getMovie(movieid, callback);
 ```
 
 ## getMoviesSimilarTo
+Get movies similar to another given an id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidsimilar/get)
 
 ```Javascript
-tmdb.getMoviesSimilarTo(movieid, error, success);
+tmdb.getMoviesSimilarTo(movieid, callback);
 ```
 
 ## getMovieCredits
+Get credits of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidcredits/get)
 
 ```Javascript
-tmdb.getMovieCredits(movieid, error, success);
+tmdb.getMovieCredits(movieid, callback);
 ```
 
 ## getMovieImages
+Get images of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidimages/get)
 
 ```Javascript
-tmdb.getMovieImages(movieid, error, success);
+tmdb.getMovieImages(movieid, callback);
 ```
 
 ## getMovieKeywords
+Get keywords of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidkeywords/get)
 
 ```Javascript
-tmdb.getMovieKeywords(movieid, error, success);
+tmdb.getMovieKeywords(movieid, callback);
 ```
 
 ## getMovieVideos
+Get videos of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidvideos/get)
 
 ```Javascript
-tmdb.getMovieVideos(movieid, error, success);
+tmdb.getMovieVideos(movieid, callback);
 ```
 
 ## getMovieReviews
+Get reviews of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidreviews/get)
 
 ```Javascript
-tmdb.getMovieReviews(movieid, error, success);
+tmdb.getMovieReviews(movieid, callback);
 ```
 
 ## getMovieRating
+Get the rating of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/get)
 
 ```Javascript
-tmdb.getMovieReviews(movieid, error, success);
+tmdb.getMovieReviews(movieid, callback);
 ```
 
 ==========================

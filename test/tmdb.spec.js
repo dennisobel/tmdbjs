@@ -9,32 +9,6 @@ describe('tmdb API wrapper test', function() {
     expect(typeof tmdb.init).toBe('function');
   });
 
-  describe('test private methods', function() {
-    beforeEach(function() {
-      tmdb.init({
-        apikey: API_KEY,
-        debug: true
-      });
-    });
-
-    it('_getUrl', function() {
-      var method = 'something/anotherthing';
-      var params = {
-        hello: 'world',
-        awe: 'some'
-      }
-      var pair1 = 'api_key='+API_KEY;
-      var pair2 = 'hello=world';
-      var pair3 = 'awe=some';
-      var url = tmdb._getUrl(method, params)
-
-      expect(url.split('?')[0]).toContain('http://api.themoviedb.org/3/'+method);
-      expect(url.split('?')[1]).toContain(pair1);
-      expect(url.split('?')[1]).toContain(pair2);
-      expect(url.split('?')[1]).toContain(pair3);
-    });
-  });
-
   describe('api calls', function() {
     var request;
     var onSuccess, onFailure;
