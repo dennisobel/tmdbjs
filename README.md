@@ -1,5 +1,7 @@
 # tmdbjs
 [![Build Status](https://travis-ci.org/gabrielperales/tmdbjs.svg?branch=master)](https://travis-ci.org/gabrielperales/tmdbjs)
+[![Code Climate](https://codeclimate.com/github/gabrielperales/tmdbjs/badges/gpa.svg)](https://codeclimate.com/github/gabrielperales/tmdbjs)
+[![Test Coverage](https://codeclimate.com/github/gabrielperales/tmdbjs/badges/coverage.svg)](https://codeclimate.com/github/gabrielperales/tmdbjs/coverage)
 [![Dependencies Status](https://david-dm.org/gabrielperales/tmdbjs.svg?theme=shields.io)](https://david-dm.org/gabrielperales/tmdbjs)
 [![DevDependencies Status](https://david-dm.org/gabrielperales/tmdbjs/dev-status.svg?theme=shields.io)](https://david-dm.org/gabrielperales/tmdbjs#info=devDependencies)
 
