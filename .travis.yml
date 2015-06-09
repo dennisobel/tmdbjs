@@ -1,3 +1,12 @@
 language: node_js
 node_js:
   - "0.10"
+addons:
+  code_climate:
+    repo_token: 8e49e0ececc3f9d8c3608180391581580b35a5386596bdc4288c33f8800d25b6
+
+
+before_script:
+  - npm install -gq bower codeclimate-test-reporter # coveralls
+after_script:
+  - codeclimate < coverage/lcov.info
