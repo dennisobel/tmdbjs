@@ -20,7 +20,7 @@ containing your api key:
 var tmdb = tmdb.init({ apikey: YOUR_API_KEY });
 ```
 
-# Implemented Methods:
+# How to use:
 
 Callbacks follows the NodeJS convention. You should check the first
 parameter of the callback to know if an error has ocurred. Otherwise,
@@ -37,107 +37,104 @@ tmdb.getConfiguration(function(error, data){
   doSomething(data);
 });
 ```
+# API
 
-## getConfiguration
-Get configuration of the TMDB service. [Check the response](http://docs.themoviedb.apiary.io/#reference/configuration/get)
+* [`init(options)`](#init-options-)
+* [`getConfiguration(callback)`](#getconfiguration-callback-)
+* [`getMoviesUpcoming(callback)`](#getmoviesupcoming-callback-)
+* [`getMoviesNowPlaying(callback)`](#getmoviesnowplaying-callback-)
+* [`getMovieLatest(callback)`](#getmovielatest-callback-)
+* [`getMoviesTopRated(callback)`](#getmoviestoprated-callback-)
+* [`getMoviesPopular(callback)`](#getmoviespopular-callback-)
+* [`getMovie(movieid, callback)`](#getmovie-movieid-callback-)
+* [`getMoviesSimilarTo(movieid, callback)`](#getmoviessimilarto-movieid-callback-)
+* [`getMovieCredits(movieid, callback)`](#getmoviecredits-movieid-callback-)
+* [`getMovieImages(movieid, callback)`](#getmovieimages-movieid-callback-)
+* [`getMovieKeywords(movieid, callback)`](#getmoviekeywords-movieid-callback-)
+* [`getMovieVideos(movieid, callback)`](#getmovievideos-movieid-callback-)
+* [`getMovieReviews(movieid, callback)`](#getmoviereviews-movieid-callback-)
+* [`getMovieRating(movieid, callback)`](#getmovierating-movieid-callback-)
 
-```Javascript
-tmdb.getConfiguration(callback);
-```
+### `init(options)`
+* **options** (`object`) - Object with the configuration of the wrapper
+* **options.apikey** (`string`) - TMDB api key
 
-## getMoviesUpcoming
-Get the movies that are upcoming to cinemas or theaters. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/upcoming/get)
+Initialize the configuration of the wrapper
+### `getConfiguration(callback)`
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMoviesUpcoming(callback);
-```
+Get the configuration of the TMDB service.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/configuration/get)
+### `getMoviesUpcoming(callback)`
+* **callback** (`function`) - Callback
 
-## getMoviesNowPlaying
-Get the list of movies that are playing in cinemas o theaters. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movienowplaying/get)
+Get the movies that are upcoming to cinemas and theaters.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/upcoming/get)
+### `getMoviesNowPlaying(callback)`
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMoviesNowPlaying(callback);
-```
+Get movies which are playing on cinemas and theaters.
+ [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movienowplaying/get)
+### `getMovieLatest(callback)`
+* **callback** (`function`) - Callback where you will get an error or the data of the movie.
 
-## getMovieLatest
-Get the last movie id of TMDB service. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movielatest/get)
+Get the latest movie uploaded to TMDB.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movielatest/get)
+### `getMoviesTopRated(callback)`
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMovieLatest(callback);
-```
+Get movies top rated.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+### `getMoviesPopular(callback)`
+* **callback** (`function`) - Callback
 
-## getMoviesTopRated
-Get most rated movies of TMDB. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+Get most popular movies.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+### `getMovie(movieid, callback)`
+* **movieid** (`number`) - The movie id which you are requesting for.
+* **callback** (`function`) - Callback
 
+Get a movie by it id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieid/get)
+### `getMoviesSimilarTo(movieid, callback)`
+* **movieid** (`number`) - The movie id which you are requesting for similar movies.
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMoviesTopRated(callback);
-```
+Get similar movies to a movie given its id
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidsimilar/get)
+### `getMovieCredits(movieid, callback)`
+* **movieid** (`number`) - The movie id which you are requesting for its credits.
+* **callback** (`function`) - Callback
 
-## getMoviesPopular
-Get most popular movies of TMDB. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movietoprated/get)
+Get credits from a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidcredits/get)
+### `getMovieImages(movieid, callback)`
+* **movieid** (`number`) - Id of the movie.
+* **callback** (`function`) - Callback
 
+Get images from a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidimages/get)
+### `getMovieKeywords(movieid, callback)`
+* **movieid** (`number`) - Id of the movie.
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMoviesPopular(callback);
-```
+Get keywords of a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidkeywords/get)
+### `getMovieVideos(movieid, callback)`
+* **movieid** (`number`) - Id of the movie.
+* **callback** (`function`) - Callback
 
-## getMovie
-Get a movie given an TMDB id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieid/get)
+Get videos of a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidvideos/get)
+### `getMovieReviews(movieid, callback)`
+* **movieid** (`number`) - Id of the movie.
+* **callback** (`function`) - Callback
 
-```Javascript
-tmdb.getMovie(movieid, callback);
-```
+Get review of a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidreviews/get)
+### `getMovieRating(movieid, callback)`
+* **movieid** (`number`) - Id of the movie.
+* **callback** (`function`) - Callback
 
-## getMoviesSimilarTo
-Get movies similar to another given an id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidsimilar/get)
-
-```Javascript
-tmdb.getMoviesSimilarTo(movieid, callback);
-```
-
-## getMovieCredits
-Get credits of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidcredits/get)
-
-```Javascript
-tmdb.getMovieCredits(movieid, callback);
-```
-
-## getMovieImages
-Get images of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidimages/get)
-
-```Javascript
-tmdb.getMovieImages(movieid, callback);
-```
-
-## getMovieKeywords
-Get keywords of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidkeywords/get)
-
-```Javascript
-tmdb.getMovieKeywords(movieid, callback);
-```
-
-## getMovieVideos
-Get videos of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidvideos/get)
-
-```Javascript
-tmdb.getMovieVideos(movieid, callback);
-```
-
-## getMovieReviews
-Get reviews of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidreviews/get)
-
-```Javascript
-tmdb.getMovieReviews(movieid, callback);
-```
-
-## getMovieRating
-Get the rating of a movie given its id. [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/get)
-
-```Javascript
-tmdb.getMovieReviews(movieid, callback);
-```
-
-==========================
-## More methods are coming!
-==========================
+Get rating of a movie given its id.
+[Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/get)

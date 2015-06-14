@@ -4,6 +4,7 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var header = require('gulp-header');
+var mdox = require('gulp-mdox');
 var pkg = require('./package.json');
 
 
@@ -23,12 +24,25 @@ var banner = [
   ''
 ].join('\n');
 
+gulp.task('doc', function() {
+  gulp
+    .src(path.source)
+    .pipe(mdox({
+      src: 'README.MD',
+      name: 'README.md',
+      start: '# API'
+    }))
+    .pipe(gulp.dest("./"))
+    ;
+});
+
 gulp.task('build', function() {
-  gulp.src(path.source)
+  gulp
+    .src(path.source)
     .pipe(uglify())
     .pipe(header(banner, {pkg:pkg}))
     .pipe(gulp.dest(path.build))
     ;
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['doc', 'build']);
