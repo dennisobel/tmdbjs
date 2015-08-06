@@ -136,6 +136,23 @@ describe('tmdb API wrapper test', function() {
       expect(request.url).toBe('http://api.themoviedb.org/3/movie/51234/rating?api_key='+API_KEY);
     });
 
+
+    it('search', function() {
+      tmdb.search({query: 'Matrix', page: 4});
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/search/multi?query=Matrix&page=4&api_key='+API_KEY);
+    });
+
+    it('searchMovie', function() {
+      tmdb.searchMovie({query: 'Matrix', year: 1999});
+      request = jasmine.Ajax.requests.mostRecent();
+
+      expect(request.method).toBe('GET');
+      expect(request.url).toBe('http://api.themoviedb.org/3/search/movie?query=Matrix&year=1999&api_key='+API_KEY);
+    });
+
   });
 
 });
