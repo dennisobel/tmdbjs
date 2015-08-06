@@ -54,6 +54,8 @@ tmdb.getConfiguration(function(error, data){
 * [`getMovieVideos(movieid, callback)`](#getmovievideos-movieid-callback-)
 * [`getMovieReviews(movieid, callback)`](#getmoviereviews-movieid-callback-)
 * [`getMovieRating(movieid, callback)`](#getmovierating-movieid-callback-)
+* [`search(query, callback)`](#search-query-callback-)
+* [`searchMovie(query, callback)`](#searchmovie-query-callback-)
 
 ### `init(options)`
 * **options** (`object`) - Object with the configuration of the wrapper
@@ -138,3 +140,22 @@ Get review of a movie given its id.
 
 Get rating of a movie given its id.
 [Check the response](http://docs.themoviedb.apiary.io/#reference/movies/movieidrating/get)
+### `search(query, callback)`
+* **query** (`object`) - Object
+* **query.query** (`string`) - Query
+* **query.page** (`number`) - Min 1, max 1000
+* **query.language** (`string`) - Language on ISO 639-1 code
+* **query.include_adult** (`boolean`) - Flag for include adult content
+* **callback** (`function`) - Callback
+
+Search the movie, tv show and person with a single query.
+### `searchMovie(query, callback)`
+* **query** (`object`) - Object
+* **query.query** (`string`) - Title
+* **query.page** (`number`) - Min 1, max 1000
+* **query.language** (`string`) - Language on ISO 639-1 code
+* **query.include_adult** (`boolean`) - Flag for include adult content
+* **query.year** (`number`) - Filter the results release dates
+* **callback** (`function`) - Callback
+
+Search for movies by title.
